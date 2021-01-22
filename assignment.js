@@ -1,6 +1,6 @@
 //  https://github.com/Iftakher99/Assignment3-jsProblemSolving
 
-//problem -1 convert kilometer to meter
+//problem -01 convert kilometer to meter
 
 var convertedMeter = kilometerToMeter(20.45); //take input parameter
 
@@ -37,7 +37,6 @@ function budgetCalculator(phone, watch, laptop) {
     return "submit correctly or don't disturb me"; //if the input not match the condition
   }
 }
-budgetCalculator(2, 3, 4);
 
 //Problem 03 hotelCost
 function hotelCost(numberOfDays) {
@@ -66,30 +65,22 @@ function hotelCost(numberOfDays) {
     return "Input the correct number of day that you wanna live here";
   }
 }
-
-hotelCost(11);
-
+//problem 04
 //largest name in the Array
 // main Function
 function megaFriend(friendsName) {
-  // you cant submit an empty array
+  var wordLength = 0;
+  var longestName;
+  //Empty string can't pass through
   if (friendsName.length > 0) {
-    var biggestName = friendsName[0];
-    // a loop for test the biggest length
-    for (var i = 1; i < friendsName.length; i++) {
-      //only string can pass through
-      if (typeof friendsName[i] == "string") {
-        var element = friendsName[i];
-        //largest name will execute from here
-        if (biggestName.length < element.length) {
-          biggestName = element;
-        }
-      } else {
-        return "You have no choice submit only string "; // it wii be showed if input isn't a string
-      }
+    for (var i = 0; i < friendsName.length; i++) {
+      if (friendsName[i].length > wordLength) {
+        var wordLength = friendsName[i].length;
+        longestName = friendsName[i];
+      } //largest name will execute from here
     }
-    return biggestName;
+    return longestName;
   } else {
-    return " oh! write something";
+    return "You have no choice submit only string "; // it wii be showed if input isn't a string
   }
 }
